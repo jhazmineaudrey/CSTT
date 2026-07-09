@@ -13,179 +13,194 @@
         <meta name="author" content="Jhazmine Audrey Perez"/>
 
         <!-- External Links -->
-        <link rel="stylesheet" href="/styles.css"/>
-        <script src="/app.js" defer></script>
+        <link rel="stylesheet" href="styles.css"/>
+        <script src="app.js" defer></script>
     </head>
     <body>
         <main>
             <section id="LANDING-SECTION">
+                <video autoplay muted loop>
+                    <source src="assets/landing-video.mp4"/>
+                </video>
                 <section id="TIMER-CONTAINER">
-                    
+                    <input type="number" placeholder="10">:<input type="number" placeholder="00">
+                    <div id="TIMER-SETTINGS">
+                        <button id="RESET-BTN"> Reset Timer </button>
+                        <button id="STARTSTOP-BTN"> Start/Stop </button>
+                        <button id="PAUSE-BTN"> Pause </button>
+                    </div>
                 </section>
-                <section id="SCHEDULE-CONTAINER">
+                <!--<section id="SCHEDULE-CONTAINER">
 
-                </section>
+                </section>-->
             </section>
             <section id="ALL-SCHEDULES-SECTION">
                 <h2> WEEKLY SCHEDULE </h2>
-                <article class="scheduleblock" id="MONDAY">
-                    <div class="classblock cs1" >
-                        <p> CS1 </p>
-                        <p><time datetime="13:00">1:00 PM</time> - <time datetime="14:30">2:30 PM</time></p>
-                    </div>
-                    <div class="classblock cs4">
-                        <p> CS4 </p>
-                        <p><time datetime="14:30">2:30 PM</time> - <time datetime="16:00">4:00 PM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="16:00">4:00 PM</time> - <time datetime="16:30">4:30 PM</time></p>
-                    </div>
-                    <div class="classblock homeroom">
-                        <p> Homeroom </p>
-                        <p><time datetime="16:30">4:30 PM</time> - <time datetime="17:30">5:30 PM</time></p>
-                    </div>
-                    <div class="classblock cs5">
-                        <p> CS5 </p>
-                        <p><time datetime="17:30">5:30 PM</time> - <time datetime="19:00">7:00 PM</time></p>
-                    </div>
-                </article>
-                <article class="scheduleblock" id="TUESDAY">
-                    <div class="classblock cs3">
-                        <p> CS3 </p>
-                        <p><time datetime="9:00">9:00 AM</time> - <time datetime="10:00">10:00 AM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="10:00">10:00 AM</time> - <time datetime="10:30">10:30 AM</time></p>
-                    </div>
-                    <div class="classblock em2">
-                        <p> EM2 </p>
-                        <p><time datetime="10:30">10:30 AM</time> - <time datetime="11:30">11:30 AM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="11:30">11:30 AM</time> - <time datetime="13:00">1:00 PM</time></p>
-                    </div>
-                    <div class="classblock cs1">
-                        <p> CS1 </p>
-                        <p><time datetime="13:00">1:00 PM</time> - <time datetime="14:00">2:00 PM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="14:00">2:00 PM</time> - <time datetime="14:30">2:30 PM</time></p>
-                    </div>
-                    <div class="classblock is2">
-                        <p> IS2 </p>
-                        <p><time datetime="14:30">2:30 PM</time> - <time datetime="15:30">3:30 PM</time></p>
-                    </div>
-                </article>
-                <article class="scheduleblock" id="WEDNESDAY">
-                    <div class="classblock cs2" >
-                        <p> CS2 </p>
-                        <p><time datetime="7:00">7:00 AM</time> - <time datetime="8:30">8:30 AM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="8:30">8:30 AM</time> - <time datetime="9:00">9:00 AM</time></p>
-                    </div>
-                    <div class="classblock em1" >
-                        <p> EM1 </p>
-                        <p><time datetime="9:00">9:00 AM</time> - <time datetime="10:30">10:30 AM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="10:30">10:30 AM</time> - <time datetime="11:00">11:00 AM</time></p>
-                    </div>
-                    <div class="classblock cs3" >
-                        <p> CS3 </p>
-                        <p><time datetime="11:00">11:00 AM</time> - <time datetime="12:30">12:30 PM</time></p>
-                    </div>
-                    <div class="classblock em2" >
-                        <p> EM2 </p>
-                        <p><time datetime="12:30">12:30 PM</time> - <time datetime="14:00">2:00 PM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="14:00">2:00 PM</time> - <time datetime="14:30">2:30 PM</time></p>
-                    </div>
-                    <div class="classblock cs5" >
-                        <p> CS5 </p>
-                        <p><time datetime="14:30">2:30 PM</time> - <time datetime="16:00">4:00 PM</time></p>
-                    </div>
-                    <div class="classblock cs4" >
-                        <p> CS4 </p>
-                        <p><time datetime="16:00">4:00 PM</time> - <time datetime="17:30">5:30 PM</time></p>
-                    </div>
-                </article>
-                <article class="scheduleblock" id="THURSDAY">
-                    <div class="classblock cs4">
-                        <p> CS4 </p>
-                        <p><time datetime="9:00">9:00 AM</time> - <time datetime="10:00">10:00 AM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="10:00">10:00 AM</time> - <time datetime="10:30">10:30 AM</time></p>
-                    </div>
-                    <div class="classblock cs5">
-                        <p> CS5 </p>
-                        <p><time datetime="10:30">10:30 AM</time> - <time datetime="11:30">11:30 AM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="11:30">11:30 AM</time> - <time datetime="13:00">1:00 PM</time></p>
-                    </div>
-                    <div class="classblock cs2">
-                        <p> CS2 </p>
-                        <p><time datetime="13:00">1:00 PM</time> - <time datetime="14:00">2:00 PM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="14:00">2:00 PM</time> - <time datetime="15:00">3:00 PM</time></p>
-                    </div>
-                    <div class="classblock em1">
-                        <p> EM1 </p>
-                        <p><time datetime="15:00">3:00 PM</time> - <time datetime="16:00">4:00 PM</time></p>
-                    </div>
-                </article>
-                <article class="scheduleblock" id="FRIDAY">
-                    <div class="classblock em2">
-                        <p> EM2 </p>
-                        <p><time datetime="7:00">7:00 AM</time> - <time datetime="8:30">8:30 AM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="8:30">8:30 AM</time> - <time datetime="9:00">9:00 AM</time></p>
-                    </div>
-                    <div class="classblock em1">
-                        <p> EM1 </p>
-                        <p><time datetime="9:00">9:00 AM</time> - <time datetime="10:30">10:30 AM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="10:30">10:30 AM</time> - <time datetime="11:00">11:00 AM</time></p>
-                    </div>
-                    <div class="classblock cs3">
-                        <p> CS3 </p>
-                        <p><time datetime="11:00">11:00 AM</time> - <time datetime="12:30">12:30 PM</time></p>
-                    </div>
-                    <div class="classblock cs1" >
-                        <p> CS1 </p>
-                        <p><time datetime="12:30">12:30 PM</time> - <time datetime="14:00">2:00 PM</time></p>
-                    </div>
-                    <div class="breakblock">
-                        <p> BREAK </p>
-                        <p><time datetime="14:00">2:00 PM</time> - <time datetime="14:30">2:30 PM</time></p>
-                    </div>
-                    <div class="classblock is2" >
-                        <p> IS2 </p>
-                        <p><time datetime="14:30">2:30 PM</time> - <time datetime="16:00">4:00 PM</time></p>
-                    </div>
-                    <div class="classblock cs2" >
-                        <p> CS2 </p>
-                        <p><time datetime="16:00">4:00 PM</time> - <time datetime="17:30">5:30 PM</time></p>
-                    </div>
-                </article>
+                <div>
+                    <article class="scheduleblock" id="MONDAY">
+                        <h3> MONDAY </h3>
+                        <div class="classblock cs1" >
+                            <p> CS1 </p>
+                            <p><time datetime="13:00">1:00 PM</time> - <time datetime="14:30">2:30 PM</time></p>
+                        </div>
+                        <div class="classblock cs4">
+                            <p> CS4 </p>
+                            <p><time datetime="14:30">2:30 PM</time> - <time datetime="16:00">4:00 PM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="16:00">4:00 PM</time> - <time datetime="16:30">4:30 PM</time></p>
+                        </div>
+                        <div class="classblock homeroom">
+                            <p> Homeroom </p>
+                            <p><time datetime="16:30">4:30 PM</time> - <time datetime="17:30">5:30 PM</time></p>
+                        </div>
+                        <div class="classblock cs5">
+                            <p> CS5 </p>
+                            <p><time datetime="17:30">5:30 PM</time> - <time datetime="19:00">7:00 PM</time></p>
+                        </div>
+                    </article>
+                    <article class="scheduleblock" id="TUESDAY">
+                        <h3> TUESDAY </h3>
+                        <div class="classblock cs3">
+                            <p> CS3 </p>
+                            <p><time datetime="9:00">9:00 AM</time> - <time datetime="10:00">10:00 AM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="10:00">10:00 AM</time> - <time datetime="10:30">10:30 AM</time></p>
+                        </div>
+                        <div class="classblock em2">
+                            <p> EM2 </p>
+                            <p><time datetime="10:30">10:30 AM</time> - <time datetime="11:30">11:30 AM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="11:30">11:30 AM</time> - <time datetime="13:00">1:00 PM</time></p>
+                        </div>
+                        <div class="classblock cs1">
+                            <p> CS1 </p>
+                            <p><time datetime="13:00">1:00 PM</time> - <time datetime="14:00">2:00 PM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="14:00">2:00 PM</time> - <time datetime="14:30">2:30 PM</time></p>
+                        </div>
+                        <div class="classblock is2">
+                            <p> IS2 </p>
+                            <p><time datetime="14:30">2:30 PM</time> - <time datetime="15:30">3:30 PM</time></p>
+                        </div>
+                    </article>
+                    <article class="scheduleblock" id="WEDNESDAY">
+                        <h3> WEDNESDAY </h3>
+                        <div class="classblock cs2" >
+                            <p> CS2 </p>
+                            <p><time datetime="7:00">7:00 AM</time> - <time datetime="8:30">8:30 AM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="8:30">8:30 AM</time> - <time datetime="9:00">9:00 AM</time></p>
+                        </div>
+                        <div class="classblock em1" >
+                            <p> EM1 </p>
+                            <p><time datetime="9:00">9:00 AM</time> - <time datetime="10:30">10:30 AM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="10:30">10:30 AM</time> - <time datetime="11:00">11:00 AM</time></p>
+                        </div>
+                        <div class="classblock cs3" >
+                            <p> CS3 </p>
+                            <p><time datetime="11:00">11:00 AM</time> - <time datetime="12:30">12:30 PM</time></p>
+                        </div>
+                        <div class="classblock em2" >
+                            <p> EM2 </p>
+                            <p><time datetime="12:30">12:30 PM</time> - <time datetime="14:00">2:00 PM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="14:00">2:00 PM</time> - <time datetime="14:30">2:30 PM</time></p>
+                        </div>
+                        <div class="classblock cs5" >
+                            <p> CS5 </p>
+                            <p><time datetime="14:30">2:30 PM</time> - <time datetime="16:00">4:00 PM</time></p>
+                        </div>
+                        <div class="classblock cs4" >
+                            <p> CS4 </p>
+                            <p><time datetime="16:00">4:00 PM</time> - <time datetime="17:30">5:30 PM</time></p>
+                        </div>
+                    </article>
+                    <article class="scheduleblock" id="THURSDAY">
+                        <h3> THURSDAY </h3>
+                        <div class="classblock cs4">
+                            <p> CS4 </p>
+                            <p><time datetime="9:00">9:00 AM</time> - <time datetime="10:00">10:00 AM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="10:00">10:00 AM</time> - <time datetime="10:30">10:30 AM</time></p>
+                        </div>
+                        <div class="classblock cs5">
+                            <p> CS5 </p>
+                            <p><time datetime="10:30">10:30 AM</time> - <time datetime="11:30">11:30 AM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="11:30">11:30 AM</time> - <time datetime="13:00">1:00 PM</time></p>
+                        </div>
+                        <div class="classblock cs2">
+                            <p> CS2 </p>
+                            <p><time datetime="13:00">1:00 PM</time> - <time datetime="14:00">2:00 PM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="14:00">2:00 PM</time> - <time datetime="15:00">3:00 PM</time></p>
+                        </div>
+                        <div class="classblock em1">
+                            <p> EM1 </p>
+                            <p><time datetime="15:00">3:00 PM</time> - <time datetime="16:00">4:00 PM</time></p>
+                        </div>
+                    </article>
+                    <article class="scheduleblock" id="FRIDAY">
+                        <h3> FRIDAY </h3>
+                        <div class="classblock em2">
+                            <p> EM2 </p>
+                            <p><time datetime="7:00">7:00 AM</time> - <time datetime="8:30">8:30 AM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="8:30">8:30 AM</time> - <time datetime="9:00">9:00 AM</time></p>
+                        </div>
+                        <div class="classblock em1">
+                            <p> EM1 </p>
+                            <p><time datetime="9:00">9:00 AM</time> - <time datetime="10:30">10:30 AM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="10:30">10:30 AM</time> - <time datetime="11:00">11:00 AM</time></p>
+                        </div>
+                        <div class="classblock cs3">
+                            <p> CS3 </p>
+                            <p><time datetime="11:00">11:00 AM</time> - <time datetime="12:30">12:30 PM</time></p>
+                        </div>
+                        <div class="classblock cs1" >
+                            <p> CS1 </p>
+                            <p><time datetime="12:30">12:30 PM</time> - <time datetime="14:00">2:00 PM</time></p>
+                        </div>
+                        <div class="breakblock">
+                            <p> BREAK </p>
+                            <p><time datetime="14:00">2:00 PM</time> - <time datetime="14:30">2:30 PM</time></p>
+                        </div>
+                        <div class="classblock is2" >
+                            <p> IS2 </p>
+                            <p><time datetime="14:30">2:30 PM</time> - <time datetime="16:00">4:00 PM</time></p>
+                        </div>
+                        <div class="classblock cs2" >
+                            <p> CS2 </p>
+                            <p><time datetime="16:00">4:00 PM</time> - <time datetime="17:30">5:30 PM</time></p>
+                        </div>
+                    </article>
+                </div>
             </section>
         </main>
     </body>
