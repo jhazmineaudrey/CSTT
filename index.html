@@ -23,12 +23,12 @@
                     <source src="assets/landing-video.mp4"/>
                 </video>
                 <section id="TIMER-CONTAINER">
-                    <input type="number" placeholder="10">:<input type="number" placeholder="00">
-                    <div id="TIMER-SETTINGS">
-                        <button id="RESET-BTN"> Reset Timer </button>
-                        <button id="STARTSTOP-BTN"> Start/Stop </button>
-                        <button id="PAUSE-BTN"> Pause </button>
-                    </div>
+                    <span id="TIMER-DISPLAY"><input class="timerinput" max="60" type="number" value="10"><span id="TIMER-COLON">:</span><input class="timerinput" max="59" min="0" type="number" value="00"></span>
+                    <span id="TIMER-BUTTONS">
+                        <button class="timerbutton" id="RESET-BTN"> Reset Timer </button>
+                        <button class="timerbutton" id="STARTSTOP-BTN"> Start/Stop </button>
+                        <button class="timerbutton" id="PAUSE-BTN"> Pause </button>
+                    </span>
                 </section>
                 <!--<section id="SCHEDULE-CONTAINER">
 

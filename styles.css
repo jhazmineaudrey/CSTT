@@ -27,14 +27,115 @@ body {
 
 /* TIMER */
 #TIMER-CONTAINER {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 70vw;
     height: 90vh;
     align-self: center;
     background-color: rgba(104, 132, 255, 0.675);
     z-index: 1;
-    border: 0.5rem solid white;
+    border: 0.5rem solid rgb(220, 220, 220);
     border-radius: 1rem;
     box-sizing: border-box;
+    box-shadow: 0px 0px 20px 7px rgb(220, 220, 220);
+}
+
+#TIMER-DISPLAY {
+    background-color: rgb(119, 168, 253);
+    border-radius: 1rem;
+    box-shadow: 0px 0px 15px 5px rgb(119, 168, 253);
+}
+
+.timerinput {
+    all: unset;
+    box-sizing: border-box;
+    margin: 0.5rem;
+    height: auto;
+    width: 15rem;
+    text-align: center;
+    font-size: 10rem;
+    color: black;
+    border-radius: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: background-color 0.2s ease;
+}
+
+.timerinput:focus {
+    background-color: rgb(89, 136, 218);
+    box-shadow: 0px 0px 5px 5px rgb(89, 136, 218);
+}
+
+.timerinput::-webkit-outer-spin-button,
+.timerinput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.timerinput[type=number] {
+  -moz-appearance: textfield;
+}
+
+#TIMER-COLON {
+    font-size: 10rem;
+}
+
+.timerbutton {
+    all: unset;
+    width: 9rem;
+    height: 3rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    margin: 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#RESET-BTN {
+    background-color: rgba(255, 104, 104, 0.818);
+    border: 3px solid rgb(154, 30, 30);
+}
+
+#RESET-BTN:hover {
+    transition: background-color 0.2s ease;
+    background-color: rgba(243, 74, 74, 0.818);
+}
+
+#STARTSTOP-BTN {
+    background-color: rgba(104, 240, 255, 0.818);
+    border: 3px solid rgb(30, 135, 154);
+}
+
+#STARTSTOP-BTN:hover {
+    transition: background-color 0.2s ease;
+    background-color: rgba(55, 216, 234, 0.818);
+}
+
+#PAUSE-BTN {
+    background-color: rgba(104, 127, 255, 0.818);
+    border: 3px solid rgb(30, 84, 154);
+}
+
+#PAUSE-BTN:hover {
+    transition: background-color 0.2s ease;
+    background-color: rgba(78, 104, 249, 0.818);
+}
+
+#RESET-BTN:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+#STARTSTOP-BTN:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
+
+#PAUSE-BTN:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
 }
 
 /* SIDE SCHEDULES */
@@ -59,6 +160,7 @@ body {
     justify-self: center;
     margin: 1.1rem;
     font-size: 2.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 #ALL-SCHEDULES-SECTION > div {
@@ -100,6 +202,7 @@ body {
     justify-self: center;
     margin: 0 1rem 1rem 1rem;
     font-size: 1.7rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
     /* CLASS BLOCKS */
