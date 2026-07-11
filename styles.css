@@ -14,6 +14,8 @@ body {
     width: 100%;
     height: 100vh;
     justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
 }
 
 #LANDING-SECTION > video {
@@ -177,12 +179,18 @@ body {
 }
 
 /* SIDE SCHEDULES */
-#SCHEDULE-CONTAINER {
-    width: 30vw;
-    height: 95%;
+#SCHEDULE-CONTAINER:not(.hidden) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    height: 90vh;
     align-self: center;
-    background-color: rgba(245, 245, 220, 0.281);
     z-index: 1;
+}
+
+.hidden {
+    display: none;
 }
 
 /* ALL SCHEDULES */
@@ -208,12 +216,22 @@ body {
 
 /* SCHEDULE BLOCKS */
 
-.scheduleblock {
+.scheduleblock:not(.side-sched) {
     padding: 1.5rem;
     border-radius: 0.4rem;
     background-color: rgba(146, 204, 255, 0.712);
     width: 15vw;
     animation: bob 1s ease infinite alternate
+}
+
+.side-sched {
+    padding: 1.5rem;
+    border-radius: 0.4rem;
+    background-color: rgba(146, 204, 255, 0.712);
+    width: 75%;
+    height: 90%;
+    box-shadow: 0px 5px 15px 5px #000000ac;
+    overflow: hidden
 }
 
 .scheduleblock:nth-child(1) {
