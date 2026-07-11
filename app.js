@@ -3,12 +3,20 @@ const timerCont = document.querySelector("#TIMER-CONTAINER");
 const timerInput = document.querySelectorAll(".timerinput");
 let prev_s_input;
 let prev_m_input;
+let day
 
 const resetButton = document.querySelector("#RESET-BTN");
 const startstopButton = document.querySelector("#STARTSTOP-BTN");
 const pauseButton = document.querySelector("#PAUSE-BTN");
 
 const sschedButton = document.querySelector("#SHOW-SCHEDULE-BTN");
+
+// Date Obtainer
+document.addEventListener("DOMContentLoaded", () => {
+    today = new Date();
+    day = today.toDateString().split(" ")
+    console.log(day[0]);
+});
 
 // Timer Input Functionalities
 timerInput.forEach((inputs) => {
@@ -56,3 +64,4 @@ resetButton.addEventListener("click", (event) => {
     MINS.value = 10;
     SECS.value = "00"
 });
+
