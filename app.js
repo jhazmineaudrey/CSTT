@@ -19,13 +19,13 @@ const tue = schedBlock[1].cloneNode(true)
 const wed = schedBlock[2].cloneNode(true)
 const thu = schedBlock[3].cloneNode(true)
 const fri = schedBlock[4].cloneNode(true)
+const weekend = schedBlock[5].cloneNode(true)
 
 // Date Obtainer
 document.addEventListener("DOMContentLoaded", () => {
-    // today = new Date();
-    // day = today.toDateString().split(" ")
-    // console.log(day[0]);
-    day = "Wed"
+    today = new Date();
+    day_array = today.toDateString().split(" ");
+    day = day_array[0];
 });
 
 // Timer Input Functionalities
@@ -104,21 +104,25 @@ sschedButton.addEventListener("click", async () => {
     };
 
     if (day == "Mon") {
-        mon.classList.add("side-sched")
-        schedCont.appendChild(mon)
+        mon.classList.add("side-sched");
+        schedCont.appendChild(mon);
     } else if (day == "Tue") {
-        tue.classList.add("side-sched")
-        schedCont.appendChild(tue)
+        tue.classList.add("side-sched");
+        schedCont.appendChild(tue);
     } else if (day == "Wed") {
-        wed.classList.add("side-sched")
-        schedCont.appendChild(wed)
+        wed.classList.add("side-sched");
+        schedCont.appendChild(wed);
     } else if (day == "Thu") {
-        thu.classList.add("side-sched")
+        thu.classList.add("side-sched");
         schedCont.appendChild(thu)
     } else if (day == "Fri") {
-        fri.classList.add("side-sched")
-        schedCont.appendChild(fri)
-    };
+        fri.classList.add("side-sched");
+        schedCont.appendChild(fri);
+    } else {
+        weekend.classList.add("side-sched");
+        weekend.style.display = "flex";
+        schedCont.appendChild(weekend);
+    }
 
     const last = timerCont.getBoundingClientRect();
 

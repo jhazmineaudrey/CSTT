@@ -246,6 +246,16 @@ body {
     overflow: hidden
 }
 
+#WEEKENDS {
+    display: none;
+    text-align: center;
+}
+
+#WEEKENDS > h3 {
+    justify-self: center;
+    align-self: center;
+}
+
 .scheduleblock:nth-child(1) {
     animation-delay: 0s;
 }
