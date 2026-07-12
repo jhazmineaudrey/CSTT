@@ -44,7 +44,7 @@ timerInput.forEach((inputs) => {
     inputs.addEventListener("change", (event) => {  
         const val_len = event.target.value.length
 
-        if (event.target.id == "MINUTES") {
+    if (event.target.id == "MINUTES") {
             if (event.target.value > 90) {
                 event.target.value = prev_m_input;
             } else if (val_len == 1 && event.target.value <= 90) {
@@ -75,8 +75,33 @@ resetButton.addEventListener("click", () => {
     SECS.value = "00";
 });
 
-sschedButton.addEventListener("click", () => {
-    schedCont.classList.toggle("hidden")
+sschedButton.addEventListener("click", async () => {
+    sschedButton.children[0].classList.toggle("spin");
+
+    const first = timerCont.getBoundingClientRect()
+
+    schedCont.classList.toggle("hidden");
+
+    if (schedCont.classList.contains("hidden")) {
+        schedCont.style.pointerEvents = "none"
+
+        const parentRect = landSect.getBoundingClientRect();
+        const childRect = schedCont.getBoundingClientRect();
+
+        const reltop = childRect.top - parentRect.top
+        const relleft = childRect.left - parentRect.left
+
+        schedCont.style.width = `${childRect.width}px`;
+        schedCont.style.height = `${childRect.height}px`;
+
+        schedCont.style.top = `${reltop}px`;
+        schedCont.style.left = `${relleft}px`;
+
+        schedCont.style.position = "absolute"
+    } else {
+        schedCont.style.pointerEvents = "all"
+        schedCont.style.position = "static"
+    };
 
     if (day == "Mon") {
         mon.classList.add("side-sched")
@@ -94,4 +119,22 @@ sschedButton.addEventListener("click", () => {
         fri.classList.add("side-sched")
         schedCont.appendChild(fri)
     };
+
+    const last = timerCont.getBoundingClientRect();
+
+    const deltaX = first.left - last.left ;
+    const deltaY = first.top - last.top;
+
+    const timerContPosAnim = timerCont.animate([{
+        transformOrigin: "top left",
+        transform: `
+            translate(${deltaX}px, ${deltaY}px)
+        `
+    }, {
+        transformOrigin: "top left",
+        transform: "none"
+    }], {
+        duration: 1000,
+        easing: "ease"
+    });
 });

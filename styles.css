@@ -166,6 +166,15 @@ body {
     transition: all 0.5s ease;
 }
 
+#SHOW-SCHEDULE-BTN > span {
+    display: inline-block;
+    transition: transform 0.4s ease-in-out
+}
+
+#SHOW-SCHEDULE-BTN > span.spin {
+    transform: rotate(180deg);
+}
+
 #SHOW-SCHEDULE-BTN:hover {
     background-color: rgb(47, 196, 196);
     transform: translateY(-0.5rem);
@@ -179,18 +188,21 @@ body {
 }
 
 /* SIDE SCHEDULES */
-#SCHEDULE-CONTAINER:not(.hidden) {
+
+#SCHEDULE-CONTAINER {
     display: flex;
+    position: absolute;
     justify-content: center;
     align-items: center;
     width: 25vw;
     height: 90vh;
-    align-self: center;
     z-index: 1;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
-.hidden {
-    display: none;
+#SCHEDULE-CONTAINER.hidden {
+    opacity: 0;
 }
 
 /* ALL SCHEDULES */
@@ -317,4 +329,9 @@ body {
 @keyframes bob {
     0% {transform: translateY(0)} 
     100% {transform: translateY(0.5rem)}
+}
+
+@keyframes spin {
+    from {transform: rotate(0)}
+    to {transform: rotate(180deg)}
 }
