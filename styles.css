@@ -38,7 +38,7 @@ body {
     height: 90vh;
     align-self: center;
     background-color: rgba(104, 132, 255, 0.675);
-    z-index: 1;
+    z-index: 2;
     border: 0.5rem solid rgb(220, 220, 220);
     border-radius: 1rem;
     box-sizing: border-box;
@@ -198,7 +198,8 @@ body {
     height: 90vh;
     z-index: 1;
     opacity: 1;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
 }
 
 #SCHEDULE-CONTAINER.hidden {
@@ -243,7 +244,7 @@ body {
     width: 75%;
     height: 90%;
     box-shadow: 0px 5px 15px 5px #000000ac;
-    overflow: hidden
+    overflow: hidden;
 }
 
 #WEEKENDS {

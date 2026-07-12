@@ -7,6 +7,9 @@ let prev_s_input;
 let prev_m_input;
 let day
 
+const MINS = document.querySelector("#MINUTES");
+const SECS = document.querySelector("#SECONDS");
+
 const resetButton = document.querySelector("#RESET-BTN");
 const startstopButton = document.querySelector("#STARTSTOP-BTN");
 const pauseButton = document.querySelector("#PAUSE-BTN");
@@ -43,34 +46,62 @@ timerInput.forEach((inputs) => {
 timerInput.forEach((inputs) => {
     inputs.addEventListener("change", (event) => {  
         const val_len = event.target.value.length
+        const num_val = Number(event.target.value)
 
-    if (event.target.id == "MINUTES") {
-            if (event.target.value > 90) {
+    if (Number.isInteger(num_val)) {
+        if (event.target.id == "MINUTES") {
+            if (event.target.value > 90 || event.target.value < 1) {
                 event.target.value = prev_m_input;
             } else if (val_len == 1 && event.target.value <= 90) {
                 event.target.value = "0" + event.target.value
-            } else if (val_len >= 1 && event.target.value <= 90) {
-                event.target.value = event.target.value; 
+            } else if (val_len > 1 && val_len < 3 && event.target.value <= 90) {
+                event.target.value = event.target.value;
+            } else {
+                event.target.value = prev_m_input;
             };
         } else if (event.target.id == "SECONDS") {
             if (event.target.value >= 60) {
                 event.target.value = prev_s_input;
             } else if (val_len == 1 && event.target.value < 60) {
                 event.target.value = "0" + event.target.value
-            } else if (val_len >= 1 && event.target.value < 60) {
+            } else if (val_len > 1 && val_len < 3 && event.target.value < 60) {
                 event.target.value = event.target.value; 
+            } else {
+                event.target.value = prev_s_input;
             };
         }
+    } else {
+        const rounded = Math.round(num_val);
+        const roundLen = rounded.toString().length;
         
+        if (event.target.id == "MINUTES") {
+            if (rounded <= 90 && rounded >= 1) {
+                if (roundLen == 1 && event.target.value <= 90) {
+                    event.target.value = "0" + rounded
+                } else if (roundLen > 1 && roundLen < 3 && event.target.value <= 90) {
+                    event.target.value = rounded
+                }
+    } else {
+                event.target.value = prev_m_input
+            };
+        } else if (event.target.id == "SECONDS") {
+            if (rounded < 60 && rounded >= 1) {
+                if (roundLen == 1 && event.target.value < 60) {
+                    event.target.value = "0" + rounded
+                } else if (roundLen > 1 && roundLen < 3 && event.target.value < 60) {
+                    event.target.value = rounded
+                }
+            } else {
+                event.target.value = prev_s_input
+            };
+        }
+    }
         event.target.blur()
     });
 });
     
 // Button Functionalities
 resetButton.addEventListener("click", () => {
-    const MINS = document.querySelector("#MINUTES");
-    const SECS = document.querySelector("#SECONDS");
-
     MINS.value = 10;
     SECS.value = "00";
 });
@@ -142,3 +173,4 @@ sschedButton.addEventListener("click", async () => {
         easing: "ease"
     });
 });
+
