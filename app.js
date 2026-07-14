@@ -6,9 +6,11 @@ const timerInput = document.querySelectorAll(".timerinput");
 let prev_s_input;
 let prev_m_input;
 let day
+let interval
 
 const MINS = document.querySelector("#MINUTES");
 const SECS = document.querySelector("#SECONDS");
+let timeLeft
 
 const resetButton = document.querySelector("#RESET-BTN");
 const startstopButton = document.querySelector("#STARTSTOP-BTN");
@@ -91,6 +93,9 @@ timerInput.forEach((inputs) => {
 resetButton.addEventListener("click", () => {
     MINS.value = 10;
     SECS.value = "00";
+    clearInterval(interval);
+    startstopButton.innerHTML = "Start";
+    pauseButton.innerHTML = "Pause";
 });
 
 sschedButton.addEventListener("click", async () => {
@@ -162,3 +167,61 @@ sschedButton.addEventListener("click", async () => {
 });
 
 // TIMER FUNCTIONALITY
+const updateTimer = () => {
+    const displayMins = Number(Math.floor(timeLeft / 60));
+    const displaySecs = Number(timeLeft % 60)
+
+    MINS.value = displayMins.toString().padStart(2, "0")
+    SECS.value = displaySecs.toString().padStart(2, "0")
+}
+
+const startTimer = () => {
+    interval = setInterval(() => {
+        timeLeft--;
+        updateTimer()
+
+        if (timeLeft === 0) {
+            clearInterval(interval);
+            updateTimer();
+            MINS.value = prev_m_input.toString().padStart(2, "0");
+            SECS.value = prev_s_input.toString().padStart(2, "0");
+        }
+    }, 1000);
+}
+
+startstopButton.addEventListener("click", (event) => {
+    if (event.target.innerHTML === "Start") {
+        event.target.innerHTML = "Stop";
+        prev_m_input = Number(MINS.value);
+        prev_s_input = Number(SECS.value);
+        MINS.disabled = true;
+        SECS.disabled = true;
+
+        startTimer()
+
+        timeLeft = Number((Number(MINS.value * 60)) +  Number(SECS.value))
+    } else {
+        event.target.innerHTML = "Start";
+        clearInterval(interval);
+        MINS.disabled = false;
+        SECS.disabled = false;
+        
+        MINS.value = prev_m_input.toString().padStart(2, "0");
+        SECS.value = prev_s_input.toString().padStart(2, "0");
+
+        pauseButton.innerHTML = "Pause";
+    }
+})
+
+pauseButton.addEventListener("click", (event) => {
+    if (startstopButton.innerHTML === "Stop") {
+        if (event.target.innerHTML === "Pause") {
+            event.target.innerHTML = "Resume";
+            clearInterval(interval);
+        } else {
+            event.target.innerHTML = "Pause";
+            startTimer()
+        }
+    }
+        
+});
