@@ -28,6 +28,13 @@ body {
 }
 
 /* TIMER */
+@media only screen and (max-width: 600px) {
+    #TIMER-CONTAINER {
+        width: 100%;
+        height: 90vh;
+    }
+}
+
 #TIMER-CONTAINER {
     position: relative;
     display: flex;
@@ -200,6 +207,7 @@ body {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
     pointer-events: none;
+    overflow: hidden;
 }
 
 #SCHEDULE-CONTAINER.hidden {
@@ -207,8 +215,7 @@ body {
 }
 
 /* ALL SCHEDULES */
-#ALL-SCHEDULES-SECTION {
-    width: 100%;
+#ALL-SCHEDULES-SECTION {    
     height: 100vh;
     background-color: rgba(136, 170, 255, 0.593);
     box-sizing: border-box;
@@ -223,8 +230,12 @@ body {
 }
 
 #ALL-SCHEDULES-SECTION > div {
-    display: flex;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, max-content));
+    justify-self: center;
+    width: 98%;
+    justify-content: center;
+    gap: 1rem
 }
 
 /* SCHEDULE BLOCKS */
@@ -233,8 +244,12 @@ body {
     padding: 1.5rem;
     border-radius: 0.4rem;
     background-color: rgba(146, 204, 255, 0.712);
-    width: 15vw;
-    animation: bob 1s ease infinite alternate
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    animation: bob 1s ease infinite alternate;
+    box-sizing: border-box;
+    justify-self: center;
 }
 
 .side-sched {

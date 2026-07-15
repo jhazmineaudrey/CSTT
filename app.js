@@ -121,6 +121,13 @@ sschedButton.addEventListener("click", async () => {
         schedCont.style.left = `${relleft}px`;
 
         schedCont.style.position = "absolute"
+
+        schedCont.addEventListener("transitionend", (transition) => {
+            if (transition.propertyName === "opacity") {
+                schedCont.style.top = "";
+                schedCont.style.left = "";
+            }
+        })
     } else {
         schedCont.style.pointerEvents = "all"
         schedCont.style.position = "static"
