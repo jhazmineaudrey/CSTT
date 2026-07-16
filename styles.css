@@ -39,6 +39,10 @@ body {
         height: auto;
         font-size: 20cqw;
     }
+    
+    #TIMER-BUTTONS {
+        grid-template-columns: repeat(1, minmax(100%, 1fr));
+    }
 }
 
 @media only screen and (min-width: 768px) {
@@ -51,6 +55,10 @@ body {
         width: 70%;
         height: auto;
         font-size: 15cqw;
+    }
+
+    #TIMER-BUTTONS {
+        grid-template-columns: repeat(3, minmax(10em, 1fr));
     }
 }
 
@@ -67,6 +75,7 @@ body {
     border-radius: 1rem;
     box-sizing: border-box;
     box-shadow: 0px 0px 20px 7px rgb(220, 220, 220);
+    gap: 1rem
 }
 
 #TIMER-DISPLAY {
@@ -110,13 +119,18 @@ body {
     font-size: 20cqw;
 }
 
+#TIMER-BUTTONS {
+    display: grid;
+    width: 90%;
+    height: 10%;
+}
+
 .timerbutton {
     all: unset;
-    width: 12rem;
-    height: 5rem;
+    width: 100%;
+    height: 100%;
     border-radius: 0.5rem;
     text-align: center;
-    margin: 1rem;
     font-size: 1.7rem;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
