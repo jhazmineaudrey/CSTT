@@ -28,96 +28,6 @@ body {
 }
 
 /* TIMER */
-@media only screen and (max-width: 768px) {
-    #TIMER-CONTAINER {
-        width: 100%;
-        height: 95vh;
-    }
-
-    #TIMER-DISPLAY {
-        width: 90%;
-        height: fit-content;
-        font-size: 20cqw;
-    }
-    
-    #TIMER-BUTTONS {
-        grid-template-columns: repeat(1, minmax(80dvw, 1fr));
-        grid-template-rows: repeat(3, minmax(10dvh, 1fr));
-    }
-
-    #SHOW-SCHEDULE-BTN {
-        all: unset;
-        text-align: center;
-        background-color: rgb(105, 235, 244);
-        position: relative;
-        width: auto;
-        height: 10dvh;
-        aspect-ratio: 1/1;
-        border-radius: 3rem;
-        font-size: 2rem;
-        font-weight: bold;
-        border: 0.2rem solid rgb(220, 220, 220);
-        box-shadow: 0px 2px 10px 0px #000000;
-        transition: all 0.5s ease;
-        bottom: 0;
-    }
-}
-
-@media only screen and (min-width: 768px) {
-    #TIMER-CONTAINER {
-        width: 70vw;
-        height: 90vh;
-    }
-
-    #TIMER-DISPLAY {
-        width: 70%;
-        height: auto;
-        font-size: 15cqw;
-    }
-
-    #TIMER-BUTTONS {
-        grid-template-columns: repeat(3, minmax(20%, 1fr));
-        aspect-ratio: 1/0.1;
-    }
-
-    #SHOW-SCHEDULE-BTN {
-        all: unset;
-        text-align: center;
-        background-color: rgb(105, 235, 244);
-        position: absolute;
-        right: -2.5rem;
-        width: 5rem;
-        height: 5rem;
-        border-radius: 3rem;
-        font-size: 2.5rem;
-        font-weight: bold;
-        border: 0.4rem solid rgb(220, 220, 220);
-        box-shadow: 0px 2px 10px 0px #000000;
-        transition: all 0.5s ease;
-    }
-
-    #SHOW-SCHEDULE-BTN > span {
-        display: inline-block;
-        transition: transform 0.4s ease-in-out
-    }
-
-    #SHOW-SCHEDULE-BTN > span.spin {
-        transform: rotate(180deg);
-    }
-
-    #SHOW-SCHEDULE-BTN:hover {
-        background-color: rgb(47, 196, 196);
-        transform: translateY(-0.5rem);
-        box-shadow: 0px 4px 15px 1px #000000;
-        cursor: pointer;
-    }
-
-    #SHOW-SCHEDULE-BTN:active {
-        transform: scale(0.95);
-        transition: transform 0.1s ease;
-    }
-}
-
 #TIMER-CONTAINER {
     position: relative;
     display: flex;
@@ -180,7 +90,7 @@ body {
     width: 90%;
     height: auto;
     min-width: 0;
-    gap: 1rem
+    gap: 1rem;
 }
 
 .timerbutton {
@@ -189,7 +99,7 @@ body {
     height: 100%;
     border-radius: 0.5rem;
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 2.1dvw;
     font-weight: bold;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -255,8 +165,8 @@ body {
     position: absolute;
     justify-content: center;
     align-items: center;
-    width: 25vw;
-    height: 90vh;
+    flex-grow: 1;
+    height: 100%;
     z-index: 1;
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
@@ -307,11 +217,11 @@ body {
 }
 
 .side-sched {
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 0.4rem;
     background-color: rgba(146, 204, 255, 0.712);
-    width: 75%;
-    height: 90%;
+    width: 20vw;
+    height: fit-content;
     box-shadow: 0px 5px 15px 5px #000000ac;
     overflow: hidden;
 }
@@ -414,4 +324,98 @@ body {
 @keyframes spin {
     from {transform: rotate(0)}
     to {transform: rotate(180deg)}
+}
+
+/* MEDIA QUERIES */
+@media only screen and (max-width: 768px) {
+    #TIMER-CONTAINER {
+        width: 100%;
+        height: 95vh;
+    }
+
+    #TIMER-DISPLAY {
+        width: 90%;
+        height: fit-content;
+        font-size: 20cqw;
+    }
+    
+    #TIMER-BUTTONS {
+        grid-template-columns: repeat(1, minmax(80dvw, 1fr));
+        grid-template-rows: repeat(3, minmax(10dvh, 1fr));
+    }
+
+    .timerbutton {
+        font-size: 5dvh;
+    }
+
+    #SHOW-SCHEDULE-BTN {
+        all: unset;
+        text-align: center;
+        background-color: rgb(105, 235, 244);
+        position: relative;
+        width: auto;
+        height: 10dvh;
+        aspect-ratio: 1/1;
+        border-radius: 3rem;
+        font-size: 2rem;
+        border: 0.2rem solid rgb(220, 220, 220);
+        box-shadow: 0px 2px 10px 0px #000000;
+        transition: all 0.5s ease;
+        bottom: 0;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #TIMER-CONTAINER {
+        width: 70vw;
+        height: 90vh;
+    }
+
+    #TIMER-DISPLAY {
+        width: 70%;
+        height: auto;
+        font-size: 15cqw;
+    }
+
+    #TIMER-BUTTONS {
+        grid-template-columns: repeat(3, minmax(20%, 1fr));
+        aspect-ratio: 1/0.1;
+    }
+
+    #SHOW-SCHEDULE-BTN {
+        all: unset;
+        text-align: center;
+        background-color: rgb(105, 235, 244);
+        position: absolute;
+        right: -2.5rem;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 3rem;
+        font-size: 2.5rem;
+        font-weight: bold;
+        border: 0.4rem solid rgb(220, 220, 220);
+        box-shadow: 0px 2px 10px 0px #000000;
+        transition: all 0.5s ease;
+    }
+
+    #SHOW-SCHEDULE-BTN > span {
+        display: inline-block;
+        transition: transform 0.4s ease-in-out
+    }
+
+    #SHOW-SCHEDULE-BTN > span.spin {
+        transform: rotate(180deg);
+    }
+
+    #SHOW-SCHEDULE-BTN:hover {
+        background-color: rgb(47, 196, 196);
+        transform: translateY(-0.5rem);
+        box-shadow: 0px 4px 15px 1px #000000;
+        cursor: pointer;
+    }
+
+    #SHOW-SCHEDULE-BTN:active {
+        transform: scale(0.95);
+        transition: transform 0.1s ease;
+    }
 }
