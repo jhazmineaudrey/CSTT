@@ -19,15 +19,17 @@ I've noticed that most of our teachers in class utilize timers whenever we need 
 
 **III. Planned Features**
 *These are features that probably won't be implemented before the end of the "thing-on-desk" YSWS event, but are stuff I would still like to add in the future.*
-- Responsive Design (At the moment, the website is only visually functional on laptops or desktops)
+- Polished Responsive Design (It's kind of scuffed at the moment, but it exists)
 - Dashboard showing the total time spent doing schoolworks
 - Pomodoro Timer for individual students 
 - Backend that allows students to log in and log hours spent doing assignments via the Pomodoro Timer
 
 ## How to Run/Use
-1. Visit the website's link: *(Website Link to be Added)*, no need to install anything on your local device.
-2. Setup the timer in however way you wish
-3. Review upcoming classes via the dashboard on the right of the timer.
+1. Visit the website's link: *https://jhazmineaudrey.github.io/CSTT/*, no need to install anything on your local device.
+2. Setup the timer in however way you wish.
+3. Review upcoming classes via the dashboard on the right of the timer, or via the lower section.
 
 ## Screenshots!
-*(To be Added)*
+<img width="1896" height="968" alt="Screenshot 2026-07-18 002320" src="https://github.com/user-attachments/assets/3298ac27-5ea2-490e-aaac-ab0f58033d55" />
+<img width="1896" height="967" alt="Screenshot 2026-07-18 002330" src="https://github.com/user-attachments/assets/9f3fbed9-909e-4580-a749-5a9d715a4b3d" />
+<img width="1897" height="961" alt="image" src="https://github.com/user-attachments/assets/e7aafac2-430a-4a19-8722-994e0726452b" />
